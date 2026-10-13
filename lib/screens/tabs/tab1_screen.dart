@@ -16,7 +16,7 @@ class _Tab1ScreenState extends State<Tab1Screen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('WinHydro • Tracker'),
+        title: const Text('Win • Tracker'),
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(20.0),

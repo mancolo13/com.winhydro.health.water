@@ -17,7 +17,7 @@ class Tab3Screen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('WinHydro • Schedule'),
+        title: const Text('Win • Schedule'),
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(20.0),
