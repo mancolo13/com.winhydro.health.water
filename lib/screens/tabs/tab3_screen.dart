@@ -1,18 +1,20 @@
 import 'package:flutter/material.dart';
 import '../../theme/app_theme.dart';
 
-class Tab3Screen extends StatefulWidget {
+class Tab3Screen extends StatelessWidget {
   const Tab3Screen({super.key});
 
   @override
-  State<Tab3Screen> createState() => _Tab3ScreenState();
-}
-
-class _Tab3ScreenState extends State<Tab3Screen> {
-  int _counter = 0;
-
-  @override
   Widget build(BuildContext context) {
+    final schedule = [
+      {'time': '08:00', 'desc': 'Утренний подъем & лимонная вода'},
+      {'time': '10:00', 'desc': 'Первый стакан в офисе'},
+      {'time': '12:30', 'desc': 'Перед обедом'},
+      {'time': '15:30', 'desc': 'Дневная перезагрузка'},
+      {'time': '18:00', 'desc': 'После работы'},
+      {'time': '21:00', 'desc': 'Вечерний стакан'},
+    ];
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('WinHydro • Schedule'),
@@ -22,108 +24,28 @@ class _Tab3ScreenState extends State<Tab3Screen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Container(
-              padding: const EdgeInsets.all(24.0),
-              decoration: BoxDecoration(
-                color: AppTheme.surfaceColor,
-                borderRadius: BorderRadius.circular(24.0),
-                border: Border.all(
-                  color: AppTheme.primaryColor.withValues(alpha: 0.3),
-                  width: 1.5,
-                ),
-              ),
-              child: Column(
+            const Text('Расписание напоминаний', style: TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold)),
+            const SizedBox(height: 12),
+            ...schedule.map((s) => Container(
+              margin: const EdgeInsets.only(bottom: 10),
+              padding: const EdgeInsets.all(16),
+              decoration: BoxDecoration(color: AppTheme.cardColor, borderRadius: BorderRadius.circular(14)),
+              child: Row(
                 children: [
-                  Container(
-                    padding: const EdgeInsets.all(16.0),
-                    decoration: BoxDecoration(
-                      color: AppTheme.primaryColor.withValues(alpha: 0.15),
-                      shape: BoxShape.circle,
-                    ),
-                    child: const Icon(
-                      Icons.alarm,
-                      size: 48,
-                      color: AppTheme.primaryColor,
-                    ),
-                  ),
-                  const SizedBox(height: 16),
-                  const Text(
-                    'Interval',
-                    style: TextStyle(
-                      fontSize: 32,
-                      fontWeight: FontWeight.w900,
-                      color: Colors.white,
-                    ),
-                  ),
-                  const SizedBox(height: 6),
-                  Text(
-                    'min',
-                    style: TextStyle(
-                      fontSize: 14,
-                      color: Colors.white.withValues(alpha: 0.7),
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
-                  const SizedBox(height: 24),
-                  ElevatedButton.icon(
-                    onPressed: () {
-                      setState(() => _counter++);
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        SnackBar(
-                          content: Text('Set выполнено! (Счетчик: \$$_counter)'),
-                          duration: const Duration(seconds: 1),
-                          backgroundColor: AppTheme.primaryColor,
-                        ),
-                      );
-                    },
-                    icon: const Icon(Icons.bolt, color: Colors.black),
-                    label: const Text('Set'),
-                    style: ElevatedButton.styleFrom(
-                      minimumSize: const Size.fromHeight(50),
+                  const Icon(Icons.alarm, color: AppTheme.primaryColor),
+                  const SizedBox(width: 14),
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(s['time']!, style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 15)),
+                        Text(s['desc']!, style: const TextStyle(color: Colors.white60, fontSize: 12)),
+                      ],
                     ),
                   ),
                 ],
               ),
-            ),
-            const SizedBox(height: 20),
-            Container(
-              padding: const EdgeInsets.all(20.0),
-              decoration: BoxDecoration(
-                color: AppTheme.cardColor,
-                borderRadius: BorderRadius.circular(20.0),
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const Text(
-                    'Активность',
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                    ),
-                  ),
-                  const SizedBox(height: 12),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        'Всего взаимодействий:',
-                        style: TextStyle(color: Colors.white.withValues(alpha: 0.7)),
-                      ),
-                      Text(
-                        '\$$_counter',
-                        style: const TextStyle(
-                          color: AppTheme.secondaryColor,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 16,
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ),
+            )),
           ],
         ),
       ),
