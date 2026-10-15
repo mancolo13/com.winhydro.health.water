@@ -36,21 +36,38 @@ class _Tab1ScreenState extends State<Tab1Screen> {
                   const SizedBox(height: 12),
                   Text('$_ml / $_target ml', style: const TextStyle(color: Colors.white, fontSize: 32, fontWeight: FontWeight.bold)),
                   const SizedBox(height: 6),
-                  const Text('Жаркий день (+350 мл к базовой норме)', style: TextStyle(color: Colors.orangeAccent, fontSize: 12)),
+                  const Text('Hot day (+350 ml to daily target)', style: TextStyle(color: Colors.orangeAccent, fontSize: 12)),
                   const SizedBox(height: 16),
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      ElevatedButton(
-                        onPressed: () => setState(() => _ml = (_ml + 250).clamp(0, 5000)),
-                        style: ElevatedButton.styleFrom(backgroundColor: AppTheme.primaryColor, foregroundColor: Colors.black),
-                        child: const Text('+250 ml Стакан'),
+                      Expanded(
+                        child: ElevatedButton(
+                          onPressed: () => setState(() => _ml = (_ml + 250).clamp(0, 5000)),
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: AppTheme.primaryColor,
+                            foregroundColor: Colors.black,
+                            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
+                          ),
+                          child: const FittedBox(
+                            fit: BoxFit.scaleDown,
+                            child: Text('+250 ml Glass'),
+                          ),
+                        ),
                       ),
                       const SizedBox(width: 12),
-                      ElevatedButton(
-                        onPressed: () => setState(() => _ml = (_ml + 500).clamp(0, 5000)),
-                        style: ElevatedButton.styleFrom(backgroundColor: AppTheme.cardColor, foregroundColor: Colors.white),
-                        child: const Text('+500 ml Бутылка'),
+                      Expanded(
+                        child: ElevatedButton(
+                          onPressed: () => setState(() => _ml = (_ml + 500).clamp(0, 5000)),
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: AppTheme.cardColor,
+                            foregroundColor: Colors.white,
+                            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
+                          ),
+                          child: const FittedBox(
+                            fit: BoxFit.scaleDown,
+                            child: Text('+500 ml Bottle'),
+                          ),
+                        ),
                       ),
                     ],
                   ),

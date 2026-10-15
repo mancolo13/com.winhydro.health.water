@@ -24,11 +24,11 @@ class Tab2Screen extends StatelessWidget {
               ),
               child: const Column(
                 children: [
-                  Text('Среднее потребление за 7 дней', style: TextStyle(color: Colors.white70, fontSize: 12)),
+                  Text('7-Day Average Intake', style: TextStyle(color: Colors.white70, fontSize: 12)),
                   SizedBox(height: 6),
-                  Text('2,520 ml/день', style: TextStyle(color: AppTheme.primaryColor, fontSize: 30, fontWeight: FontWeight.bold)),
+                  Text('2,520 ml/day', style: TextStyle(color: AppTheme.primaryColor, fontSize: 30, fontWeight: FontWeight.bold)),
                   SizedBox(height: 6),
-                  Text('91% соблюдение водного баланса', style: TextStyle(color: Colors.greenAccent, fontSize: 12)),
+                  Text('91% hydration target achieved', style: TextStyle(color: Colors.greenAccent, fontSize: 12)),
                 ],
               ),
             ),

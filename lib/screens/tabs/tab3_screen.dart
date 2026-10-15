@@ -7,12 +7,12 @@ class Tab3Screen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final schedule = [
-      {'time': '08:00', 'desc': 'Утренний подъем & лимонная вода'},
-      {'time': '10:00', 'desc': 'Первый стакан в офисе'},
-      {'time': '12:30', 'desc': 'Перед обедом'},
-      {'time': '15:30', 'desc': 'Дневная перезагрузка'},
-      {'time': '18:00', 'desc': 'После работы'},
-      {'time': '21:00', 'desc': 'Вечерний стакан'},
+      {'time': '08:00', 'desc': 'Morning wake-up & lemon water'},
+      {'time': '10:00', 'desc': 'First glass at work'},
+      {'time': '12:30', 'desc': 'Pre-lunch hydration'},
+      {'time': '15:30', 'desc': 'Midday energy boost'},
+      {'time': '18:00', 'desc': 'Post-work / workout hydration'},
+      {'time': '21:00', 'desc': 'Evening hydration glass'},
     ];
 
     return Scaffold(
@@ -24,7 +24,7 @@ class Tab3Screen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            const Text('Расписание напоминаний', style: TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold)),
+            const Text('Reminder Schedule', style: TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold)),
             const SizedBox(height: 12),
             ...schedule.map((s) => Container(
               margin: const EdgeInsets.only(bottom: 10),

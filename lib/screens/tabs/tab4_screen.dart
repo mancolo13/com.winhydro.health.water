@@ -25,13 +25,13 @@ class Tab4Screen extends StatelessWidget {
               child: const Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text('Аналитика напитков за месяц', style: TextStyle(color: AppTheme.primaryColor, fontWeight: FontWeight.bold, fontSize: 16)),
+                  Text('Monthly Beverage Analytics', style: TextStyle(color: AppTheme.primaryColor, fontWeight: FontWeight.bold, fontSize: 16)),
                   SizedBox(height: 12),
-                  Text('• Чистая вода: 75% (56.7 л)', style: TextStyle(color: Colors.white, fontSize: 14)),
+                  Text('• Pure Water: 75% (56.7 L)', style: TextStyle(color: Colors.white, fontSize: 14)),
                   SizedBox(height: 6),
-                  Text('• Травяной чай: 15% (11.3 л)', style: TextStyle(color: Colors.white, fontSize: 14)),
+                  Text('• Herbal Tea: 15% (11.3 L)', style: TextStyle(color: Colors.white, fontSize: 14)),
                   SizedBox(height: 6),
-                  Text('• Изотоники и электролиты: 10% (7.6 л)', style: TextStyle(color: Colors.white, fontSize: 14)),
+                  Text('• Electrolytes & Sports Drinks: 10% (7.6 L)', style: TextStyle(color: Colors.white, fontSize: 14)),
                 ],
               ),
             ),
